@@ -8,9 +8,22 @@ import QuizzScreen from '../screens/QuizzScreen';
 
 const Stack = createStackNavigator();
 
+// Configuration du Linking pour le web
+const linking = {
+  prefixes: ['https://animalia-izixnx9za-alexandredelafosses-projects.vercel.app', 'ton-app://'],  // Enlève le slash à la fin
+  config: {
+    screens: {
+      Home: '',
+      Animal: 'animal',
+      Preferences: 'preferences',
+      Quizz: 'quizz',
+    },
+  },
+};
+
 export default function AppNavigator() {
   return (
-    <NavigationContainer>
+    <NavigationContainer linking={linking}>
       <Stack.Navigator initialRouteName="Home">
         <Stack.Screen name="Home" component={HomeScreen} />
         <Stack.Screen name="Animal" component={AnimalScreen} />
