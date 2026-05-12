@@ -1,12 +1,11 @@
 {
-    "builds": [
-      {
-        "src": "web-build/**/*",
-        "use": "@vercel/static"
-      }
-    ],
-    "routes": [
-      { "src": "/(.*)", "dest": "/index.html" }
-    ]
-  }
-  
+  "builds": [
+    {
+      "src": "web-build/**/*",
+      "use": "@vercel/static"
+    }
+  ],
+  "routes": [
+    { "src": "/(.*)", "dest": "/web-build/$1" }
+  ]
+}
